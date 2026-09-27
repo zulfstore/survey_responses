@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <script>
+      (function() {
+        try {
+          var curFetch = window.fetch;
+          function getFetch() { return curFetch; }
+          function setFetch(v) { curFetch = v; }
+
+          try {
+            Object.defineProperty(window, 'fetch', {
+              get: getFetch,
+              set: setFetch,
+              configurable: true,
+              enumerable: true
+            });
+          } catch (e1) {}
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            try {
+              Object.defineProperty(Window.prototype, 'fetch', {
+                get: getFetch,
+                set: setFetch,
+                configurable: true,
+                enumerable: true
+              });
+            } catch (e2) {}
+          }
+
+          if (typeof globalThis !== 'undefined' && globalThis !== window) {
+            try {
+              Object.defineProperty(globalThis, 'fetch', {
+                get: getFetch,
+                set: setFetch,
+                configurable: true,
+                enumerable: true
+              });
+            } catch (e3) {}
+          }
+        } catch (err) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>ZULF BRAND LAB — Market Validation Engine</title>
+    <meta name="description" content="Help ZULF (SMC-PRIVATE) LIMITED discover which consumer brand to launch first in Pakistan and expand globally." />
+    <meta property="og:title" content="ZULF BRAND LAB — Help Us Build the Next Brand" />
+    <meta property="og:description" content="We're testing real consumer brand ideas. 2–4 minutes to decide what launches next." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0B0B0B" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#0B0B0B] text-[#F5F3EE] antialiased selection:bg-[#F5F3EE] selection:text-[#0B0B0B] min-h-screen overflow-x-hidden font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

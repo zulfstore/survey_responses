@@ -1,0 +1,6 @@
+{
+  "name": "ZULF BRAND LAB — Market Validation Engine",
+  "description": "Interactive consumer brand discovery and market validation survey for ZULF (SMC-PRIVATE) LIMITED.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
